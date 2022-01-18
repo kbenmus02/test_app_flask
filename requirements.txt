@@ -13,6 +13,7 @@ seaborn
 sklearn
 werkzeug
 
+
 jupyter
 
 
