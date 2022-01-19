@@ -2,11 +2,15 @@
 # Tutoriel : https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask
 # Images : C:\Users\René\Documents\Rene\IA\IA297\Jupyter\420-A62-BB_ProjetSynthese\A62-EquipeCV\cell_images\Parasitized
 import os.path
+import os
 import imghdr
+import glob
 
 import pandas as pd
 import numpy as np
 import cv2
+import fnmatch #Permet de filtrer les noms de fichier selon l'extention.
+import utils
 
 from flask import Flask, \
     abort, \
@@ -32,7 +36,7 @@ IMG_IN_COLOR = 1
 
 @app.route("/")
 def index():
-    import fnmatch #Permet de filtrer les noms de fichier selon l'extention.
+    
     img_file_name_list = fnmatch.filter(os.listdir(app.config['UPLOAD_PATH']), "*.png") #Liste des images dans le répertoire UPLOAD_PATH.
     print("### Index(), av predict()")
     prediction_table_row_list = predict()
@@ -50,8 +54,7 @@ def manage_button():
         # uploaded_file = request.files['img_file'] # Mettre le "name" du champ dans le formulaire HTML
 
         #=== Efface les fichiers existants
-        import os
-        import glob
+
 
         file_name_list = glob.glob(app.config["UPLOAD_PATH"] + '/*.png')
         for file_name in file_name_list:
@@ -127,7 +130,7 @@ def predict():
 
     # === Charge le modèle
     print("### Chargement du modèle ...")
-    import utils
+    
     model = utils.pickle_read(PATH_MODEL + "/" + MODEL_FILE_NAME)
     print("### " + str(model))
     print("### Chargement du modèle fait")
@@ -135,8 +138,8 @@ def predict():
 
     # === Pré-traite les images
     print("### Pré-traitement des images ...")
-    import os
-    import glob
+    
+    
 
     img_file_name_list = glob.glob(app.config["UPLOAD_PATH"] + '/*.png')
     df_img_file_name = pd.DataFrame(img_file_name_list, columns=["img_file_info"])
@@ -184,11 +187,11 @@ def uploads(filename):
 def load_model(model_file_info: str):
     #=== Charge le modèle
     NOTEBOOK_PATH = "../notebook"
-    import utils
+    
     model = utils.pickle_read(model_file_info)
     return model
     #--- Charge le modèle
 
 if __name__ == "__main__":
-    port = os.environ.get("PORT", 5000)  
+    port = os.environ.get("PORT", 5000)
     app.run(debug=False, host="0.0.0.0", port = port)
