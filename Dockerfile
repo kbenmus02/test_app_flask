@@ -13,12 +13,14 @@ RUN apt-get install -y \
 #RUN apt-get install python3-opencv -y
 
 RUN pip3 install --upgrade pip 
+RUN pip3 install -r requirements.txt
 
 RUN mkdir -p /server_app/
 ADD . /server_app/
 RUN ls /server_app/
+
 WORKDIR /server_app/cours03_flask_file/
-RUN pip3 install -r requirements.txt
+
 
 ENTRYPOINT ["python3", "app.py"]
 
