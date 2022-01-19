@@ -1,1 +1,2 @@
+heroku ps:scale web=1 -a test-malaria
 web: python app.py
