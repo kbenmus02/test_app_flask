@@ -1,6 +1,5 @@
 dill
 flask
-fnmatch
 glob2
 imghdr
 import-ipynb
