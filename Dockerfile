@@ -16,10 +16,11 @@ RUN pip3 install --upgrade pip
 
 RUN mkdir -p /server_app/
 ADD . /server_app/
-WORKDIR /server_app/
+RUN ls /server_app/
+WORKDIR /server_app/cours03_flask_file/
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["cd cours03_flask_file","python3", "app.py"]
+ENTRYPOINT ["python3", "app.py"]
 
 
 
