@@ -11,8 +11,8 @@ RUN apt-get install -y \
 #RUN apt-get install ffmpeg  libsm6 libxext6  -y
 #libxrender-dev
 #RUN apt-get install python3-opencv -y
-
-RUN pip3 install --upgrade pip==20.0.1 
+RUN apt-get update && apt-get install libgl1
+RUN pip3 install --upgrade pip 
 
 RUN mkdir -p /server_app/
 ADD . /server_app/
