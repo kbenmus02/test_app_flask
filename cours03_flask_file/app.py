@@ -42,8 +42,8 @@ def index():
     #prediction_table_row_list = predict()
     #print("###", prediction_table_row_list)
     #print("### Index(), ap predict()")
-    return render_template('index.html')#, file_name_list=img_file_name_list, table_row_list = prediction_table_row_list)
-
+    #return render_template('index.html')#, file_name_list=img_file_name_list, table_row_list = prediction_table_row_list)
+    return "<h1> TOTO </h1>"
 if __name__ == "__main__":
     port = os.environ.get("PORT", 5000)
     app.run(debug=False, host="0.0.0.0", port = port)
