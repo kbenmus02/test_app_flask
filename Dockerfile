@@ -8,8 +8,8 @@ RUN apt-get install -y \
     python3 \
     python3-pip
 
-RUN apt-get install ffmpeg libxrender-dev libsm6 libxext6  -y
-
+RUN apt-get install ffmpeg  libsm6 libxext6  -y
+#libxrender-dev
 
 
 RUN pip3 install --upgrade pip==20.0.1 
