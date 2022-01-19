@@ -10,7 +10,8 @@ import pandas as pd
 import numpy as np
 import cv2
 import fnmatch #Permet de filtrer les noms de fichier selon l'extention.
-import utils
+#import utils
+from cours03_flask_file import utils
 
 from flask import Flask, \
     abort, \
