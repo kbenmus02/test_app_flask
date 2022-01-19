@@ -10,8 +10,9 @@ import pandas as pd
 import numpy as np
 import cv2
 import fnmatch #Permet de filtrer les noms de fichier selon l'extention.
-#import utils
-from cours03_flask_file import utils
+
+import utils
+#from cours03_flask_file import utils
 
 from flask import Flask, \
     abort, \
@@ -28,7 +29,7 @@ app.config["MAX_CONTENT_LENGTH"]=50 * 1024 #50 Ko
 app.config["UPLOAD_EXTENSIONS"] = [".png"]
 app.config["UPLOAD_PATH"] = "uploaded_img" # Le répertoire doit exister avant d'être utilisé.
 
-PATH_ROOT = "."
+PATH_ROOT = ".."
 PATH_NOTEBOOK = PATH_ROOT + "/notebook"
 PATH_MODEL = PATH_ROOT + "/model"
 MODEL_FILE_NAME = "model_rf_rm_2021-01-16_14h28.pklz"

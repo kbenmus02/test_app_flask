@@ -19,7 +19,7 @@ ADD . /server_app/
 WORKDIR /server_app/
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["python3", "app.py"]
+ENTRYPOINT ["cours03_flask_file/python3", "app.py"]
 
 
 
