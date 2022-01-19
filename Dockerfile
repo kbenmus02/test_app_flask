@@ -8,9 +8,9 @@ RUN apt-get install -y \
     python3 \
     python3-pip
 
-RUN apt-get install ffmpeg  libsm6 libxext6  -y
+#RUN apt-get install ffmpeg  libsm6 libxext6  -y
 #libxrender-dev
-
+RUN apt-get install python3-opencv -y
 
 RUN pip3 install --upgrade pip==20.0.1 
 
