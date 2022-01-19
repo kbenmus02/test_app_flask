@@ -187,7 +187,7 @@ def uploads(filename):
 def load_model(model_file_info: str):
     #=== Charge le modèle
     NOTEBOOK_PATH = "../notebook"
-    
+
     model = utils.pickle_read(model_file_info)
     return model
     #--- Charge le modèle
