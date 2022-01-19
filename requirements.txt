@@ -1,7 +1,7 @@
 dill
 flask
 glob2
-imghdr
+
 import-ipynb
 matplotlib
 mlflow
